@@ -65,6 +65,8 @@ for(j in 1:8){
 		chr = CHR
 		S = -9
 		E = -9
+
+		#get coordinates of markers in raw file from the corresponding map file
 		map = fread(paste("/scratch/junzli_flux/sramdas/haplotyping/founders/rn6/chr",chr,".map",sep=""),stringsAsFactors=FALSE, data.table=FALSE)
 		positions_in_raw = fread(paste("/scratch/junzli_flux/sramdas/haplotyping/founders/rn6/chr",CHR,"raw.raw",sep=""),nrow=1,stringsAsFactors=FALSE,data.table=FALSE,header=FALSE)
 		positions_in_raw = positions_in_raw[,-c(1:6)]
@@ -123,6 +125,6 @@ for(j in 1:8){
 	SEGMENTS[[j]] = list()
 	SEGMENTS[[j]][['starts']] = SEGMENT_starts
 	SEGMENTS[[j]][['ends']] = SEGMENT_ends
-	write.table(towrite_bed, file=paste("strain_",strains[j],"highhetsegments.bed",sep=""),row.names=FALSE,col.names=FALSE,quote=FALSE,sep="\t")
+	write.table(towrite_bed, file=paste("strain_",strains[j],"highhetsegments_",PERCENT_HET_THRESHOLD,"_threshold_",NUM_MARKERS,"_markersperwindow",".bed",sep=""),row.names=FALSE,col.names=FALSE,quote=FALSE,sep="\t")
 }
 
