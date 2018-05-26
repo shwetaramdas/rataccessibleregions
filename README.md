@@ -5,3 +5,4 @@ The coordinates correspond to the rn6 reference genome.
 
 The subfolder merged/ contains recommended mask files.
 
+The subfolder unmerged/ contains mask files created without merging segments separated by a single window of low-heterozygosity.
