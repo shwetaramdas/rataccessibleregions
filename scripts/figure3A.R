@@ -80,4 +80,6 @@ for(chr in 1:20){
 }
 
 
-boxplot(d ~ num, xlab="Num. founders in which window is heterozygous", ylab="Read Depth')
+
+ggplot(toplot, aes(x=as.factor(num),y=d)) + geom_boxplot() + geom_point(aes(size=0.75)) + labs(x="Num. founders with heterozygous calls", y="Read Depth")
+ggsave("figure3a.pdf",width=3.5,height=3.5,device="pdf")
