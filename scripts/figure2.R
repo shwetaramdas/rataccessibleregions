@@ -15,7 +15,7 @@ for(CHR in 1:21){
 }
 
 points = c(7.2,7.2,6.9,6.4,5.6,4.7,3.5,2.1,0.37)
-pdf("figure2.pdf")
+ pdf("figure2.pdf",width=3.5,height=3.5, pointsize=8)
  a = barplot(log10(table(all_num_hets)),main="",ylab="log10 count of 9 classes", xlab="Class of heterozygous calls defined by the number of lines it appeared in",ylim=c(0,7.35))
  points(a[,1], y=points,pch=19)
 dev.off()
