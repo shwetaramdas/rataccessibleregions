@@ -6,11 +6,7 @@ strains = names
 POSITIONS = list()
 MAP = list()
 for(chr in 1:21){
-	if(chr > 1){
-		positions_in_raw = fread(paste("../chr",CHR,"raw.raw",sep=""),nrow=1,stringsAsFactors=FALSE,data.table=FALSE,header=FALSE)
-	}else{
-		positions_in_raw = fread("../tempheader",nrow=1,stringsAsFactors=FALSE,data.table=FALSE,header=FALSE)
-	}
+	positions_in_raw = fread(paste("../chr",CHR,"raw.raw",sep=""),nrow=1,stringsAsFactors=FALSE,data.table=FALSE,header=FALSE)
 	positions_in_raw = positions_in_raw[,-c(1:6)]
 	positions_in_raw = positions_in_raw[1,]
 	positions_in_raw = gsub("_.*","",positions_in_raw)
